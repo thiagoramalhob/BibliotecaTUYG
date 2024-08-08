@@ -1,0 +1,119 @@
+/* Adicione ou ajuste estes estilos no seu arquivo styles.css */
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #fdfcf5; /* Marrom claro */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    overflow-x: hidden; /* Remove o scroll horizontal */
+}
+
+header {
+    background-color: #C97B26; /* Laranja */
+    color: white;
+    display: flex;
+    flex-direction: column; /* Alinha logo e título verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 1em; /* Reduzido para diminuir o tamanho do header */
+    position: relative;
+}
+
+header .logo {
+    height: 150px; /* Ajuste o tamanho do logo */
+    margin-bottom: 10px; /* Espaço entre o logo e o título */
+}
+
+header .title {
+    text-align: center; /* Centraliza o título */
+    font-size: 2em; /* Tamanho do título */
+    margin: 0;
+}
+
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#searchBar {
+    width: 80%;
+    max-width: 600px; /* Define um tamanho máximo para o campo de busca */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#bookList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajusta o número de colunas baseado na largura */
+    gap: 30px; /* Aumenta o espaçamento entre os itens */
+    padding: 20px;
+    box-sizing: border-box;
+    justify-items: start; /* Alinha todos os itens à esquerda inicialmente */
+    max-width: 100%; /* Garante que o grid não exceda a largura da tela */
+    margin: 0 auto; /* Centraliza o grid dentro do container */
+}
+
+.book {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0; /* Remover a margem vertical para evitar sobreposição */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%; /* Garante que a largura da caixa de livro se ajuste ao grid */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+.book img {
+    width: 100%;      /* Define a largura da imagem para 100% do contêiner */
+    height: 180px;    /* Define uma altura fixa para a imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner mantendo a proporção */
+    border-radius: 10px;
+}
+
+.book h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    min-height: 2.4em; /* Define altura mínima para o título */
+    overflow: hidden; /* Oculta o excesso de texto, se necessário */
+    text-overflow: ellipsis; /* Adiciona reticências se o texto for muito longo */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita o título a 2 linhas */
+    -webkit-box-orient: vertical;
+}
+
+.book p {
+    font-size: 0.9em;
+    color: #666;
+    align-items: top;
+}
+
+.book p.summary {
+    background-color: #ffffff; /* Cor de fundo suave para o resumo */
+    border: 1px solid #E5B88D; /* Borda para destacar */
+    border-radius: 10px;
+    padding: 15px;
+    color: #333; /* Cor do texto */
+    font-size: 0.9em; /* Ajuste o tamanho da fonte se necessário */
+    text-align: center; /* Justificar o texto para um visual mais limpo */
+    margin-top: 10px;
+    height: auto; /* Deixar a altura automática para o resumo */
+}
+
+.book p.description {
+    max-height: 10.5em; /* Ajuste conforme necessário para 7 linhas */
+    overflow-y: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    background-color: #FDF6E3; /* Cor de fundo para manter a consistência */
+    border: 1px solid #E5B88D; /* Borda para destacar */
+    border-radius: 5px;
+    padding: 15px;
+    color: #333; /* Cor do texto */
+    text-align: justify; /* Justificar o texto para um visual mais limpo */
+    margin-top: 10px;
+    box-sizing: border-box; /* Inclui padding e border na altura total */
+}

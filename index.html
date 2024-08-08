@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca TUYG</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="icon" type="image/png" href="data/logoFavicon.png">
+</head>
+<body>
+    <header>
+        <img src="data/LogoPagina.jpg" alt="Logo da Biblioteca" class="logo">
+        <h1>Biblioteca de livros - TUYG</h1>
+        <input type="text" id="searchBar" onkeyup="filterBooks()" placeholder="Filtrar por título...">
+    </header>
+    <main id="bookList">
+        <!-- Livros serão adicionados aqui -->
+    </main>
+    <script src="node_modules/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
