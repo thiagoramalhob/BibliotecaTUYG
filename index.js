@@ -8,17 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
     //clique no botão flutuante para abrir o modal
     floatingButton.addEventListener("click", () => {
         modal.style.display = "block";
+        document.body.classList.add("modal-open");
     });
 
     //clique no botão de fechar para fechar o modal
     span.onclick = function() {
         modal.style.display = "none";
+        document.body.classList.remove("modal-open");
     }
 
     //clique fora do modal para fechar o modal
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            document.body.classList.remove("modal-open");
         }
     }
 });
