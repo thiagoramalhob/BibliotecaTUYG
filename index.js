@@ -1,5 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     loadExcelData();
+
+    const modal = document.getElementById("bookModal");
+    const span = document.getElementsByClassName("close")[0];
+    const floatingButton = document.getElementById("floatingButton");
+
+    //clique no botão flutuante para abrir o modal
+    floatingButton.addEventListener("click", () => {
+        modal.style.display = "block";
+    });
+
+    //clique no botão de fechar para fechar o modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    //clique fora do modal para fechar o modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 });
 
 function loadExcelData() {

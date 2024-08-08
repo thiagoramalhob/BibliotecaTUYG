@@ -15,10 +15,24 @@
     <div class="search-container">
         <input type="text" id="searchBar" onkeyup="filterBooks()" placeholder="Filtrar por título...">
     </div>
-    <main id="bookList">
-        <!-- Livros serão adicionados aqui -->
-    </main>
+    <main id="bookList"> </main>
     <script src="assets/xlsx.full.min.js"></script>
     <script src="index.js"></script>
 </body>
+
+<!-- Modal -->
+<div id="bookModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="modal-message">
+            <strong>Gostou de algum livro?</strong><br><br>
+            Todos os livros exibidos aqui são físicos e estão disponíveis na biblioteca do TUYG, localizada ao lado do vestiário masculino.<br><br>
+            Para alugar um livro, basta entrar em contato com o grupo jovem "Já é quinta?" do TUYG e informar o título do livro desejado. Estamos ansiosos para ajudar!
+        </p>
+    </div>
+</div>
+
+<!-- Botão Flutuante -->
+<button id="floatingButton" class="floating-button">Gostou de algum livro?</button>
+
 </html>
