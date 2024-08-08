@@ -1,5 +1,3 @@
-/* Adicione ou ajuste estes estilos no seu arquivo styles.css */
-
 body {
     font-family: 'Lato', sans-serif;
     background-color: #fdfcf5; /* Marrom claro */
@@ -17,6 +15,7 @@ header {
     align-items: center; /* Centraliza o conteúdo horizontalmente */
     padding: 1em; /* Reduzido para diminuir o tamanho do header */
     position: relative;
+    text-align: center; /* Centraliza o texto no header */
 }
 
 header .logo {
@@ -25,14 +24,33 @@ header .logo {
 }
 
 header .title {
-    text-align: center; /* Centraliza o título */
     font-size: 2em; /* Tamanho do título */
     margin: 0;
+    width: 80%; /* Limita a largura para manter o texto centralizado */
+    word-wrap: break-word; /* Permite que o texto quebre em várias linhas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centraliza o texto no título */
 }
 
+/* Media query para telas menores */
+@media (max-width: 600px) {
+    header .title {
+        font-size: 1.5em; /* Reduz o tamanho da fonte em telas menores */
+    }
+}
+
+/* Barra de busca */
 .search-container {
+    width: 100%;
+    background-color: #C97B26; /* Mantém a cor de fundo do header */
     text-align: center;
-    margin: 20px 0;
+    padding: 10px 0;
+    position: -webkit-sticky; /* Para navegadores compatíveis com WebKit */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Garante que a barra de busca fique acima do conteúdo */
 }
 
 #searchBar {
@@ -43,6 +61,7 @@ header .title {
     border: 1px solid #ddd;
 }
 
+/* Lista de livros */
 #bookList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajusta o número de colunas baseado na largura */
@@ -70,9 +89,8 @@ header .title {
 }
 
 .book img {
-    width: 100%;      /* Define a largura da imagem para 100% do contêiner */
-    height: 180px;    /* Define uma altura fixa para a imagem */
-    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner mantendo a proporção */
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
