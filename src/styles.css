@@ -7,6 +7,11 @@ body {
     overflow-x: hidden; /* Remove o scroll horizontal */
 }
 
+/* Estilo para desativar o scroll do corpo da página */
+body.modal-open {
+    overflow: hidden;
+}
+
 header {
     background-color: #C97B26; /* Laranja */
     color: white;
@@ -89,15 +94,16 @@ header .title {
 }
 
 .book img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;      /* Define a largura da imagem para 100% do contêiner */
+    height: 180px;    /* Define uma altura fixa para a imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner mantendo a proporção */
     border-radius: 10px;
 }
 
 .book h2 {
     font-size: 1.2em;
     margin: 10px 0;
-    min-height: 2.4em; /* Define altura mínima para o título */
+    min-height: 2.1em; /* Define altura mínima para o título */
     overflow: hidden; /* Oculta o excesso de texto, se necessário */
     text-overflow: ellipsis; /* Adiciona reticências se o texto for muito longo */
     display: -webkit-box;
