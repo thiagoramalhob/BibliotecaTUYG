@@ -53,7 +53,8 @@ function displayBooks(books) {
         bookDiv.className = "book";
 
         const img = document.createElement("img");
-        img.src = `data/images/${book["Nome do Livro"]}.jpg`;
+        const nameBook = book["Nome do Livro"].replace(/[?!]/g, '')
+        img.src = `data/images/${nameBook}.jpg`;
         img.onerror = () => {
             img.src = `data/images/emptyState.png`;
         };

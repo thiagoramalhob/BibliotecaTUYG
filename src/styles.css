@@ -88,16 +88,18 @@ header .title {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 100%; /* Garante que a largura da caixa de livro se ajuste ao grid */
     box-sizing: border-box; /* Inclui padding e border na largura total */
 }
 
 .book img {
-    width: 100%;      /* Define a largura da imagem para 100% do contêiner */
-    height: 180px;    /* Define uma altura fixa para a imagem */
+    width: 60%;      /* Define a largura da imagem para 100% do contêiner */
+    height: 200px;    /* Define uma altura fixa para a imagem */
     object-fit: cover; /* Ajusta a imagem para cobrir o contêiner mantendo a proporção */
     border-radius: 10px;
+    margin: 0 auto;
 }
 
 .book h2 {
