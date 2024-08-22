@@ -82,34 +82,35 @@ header .title {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin: 0; /* Remover a margem vertical para evitar sobreposição */
+    margin: 0; 
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Alinha os itens no topo */
     align-items: center;
-    width: 100%; /* Garante que a largura da caixa de livro se ajuste ao grid */
-    box-sizing: border-box; /* Inclui padding e border na largura total */
+    width: 100%; 
+    height: 100%; /* Certifica-se de que todos os livros tenham a mesma altura */
+    box-sizing: border-box;
 }
 
 .book img {
-    width: 60%;      /* Define a largura da imagem para 100% do contêiner */
-    height: 200px;    /* Define uma altura fixa para a imagem */
-    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner mantendo a proporção */
+    width: 60%;
+    height: 200px;
+    object-fit: fill;
     border-radius: 10px;
-    margin: 0 auto;
+    margin-top: 10px; /* Margem fixa de 10px */
 }
 
 .book h2 {
     font-size: 1.2em;
-    margin: 10px 0;
-    min-height: 2.1em; /* Define altura mínima para o título */
-    overflow: hidden; /* Oculta o excesso de texto, se necessário */
-    text-overflow: ellipsis; /* Adiciona reticências se o texto for muito longo */
+    margin: 20px 0 0; /* Margem superior de 10px abaixo da imagem */
+    min-height: 2.1em; 
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limita o título a 2 linhas */
+    -webkit-line-clamp: 2; 
     -webkit-box-orient: vertical;
 }
 
@@ -120,15 +121,14 @@ header .title {
 }
 
 .book p.summary {
-    background-color: #ffffff; /* Cor de fundo suave para o resumo */
-    border: 1px solid #E5B88D; /* Borda para destacar */
+    background-color: #ffffff;
+    border: 1px solid #E5B88D;
     border-radius: 10px;
     padding: 15px;
-    color: #333; /* Cor do texto */
-    font-size: 0.9em; /* Ajuste o tamanho da fonte se necessário */
-    text-align: center; /* Justificar o texto para um visual mais limpo */
-    margin-top: 10px;
-    height: auto; /* Deixar a altura automática para o resumo */
+    color: #333;
+    font-size: 0.9em;
+    margin-top: 15px; /* Margem fixa de 15px abaixo do título */
+    height: auto; /* Permite a expansão vertical conforme o conteúdo */
 }
 
 .book p.description {
