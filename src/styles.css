@@ -96,9 +96,9 @@ header .title {
 }
 
 .book img {
-    width: 60%;
-    height: 200px;
-    object-fit: fill;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
     border-radius: 10px;
     margin-top: 10px; /* Margem fixa de 10px */
 }
@@ -220,3 +220,29 @@ header .title {
 #floatingButton:hover {
     background-color: #E67E22; /* Cor de fundo ao passar o mouse */
 }
+
+#noResultsMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#noResultsImage {
+    width: 250px; /* Tamanho reduzido para um visual mais discreto */
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 10px;
+}
+
+#noResultsMessage p {
+    font-size: 20px;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+

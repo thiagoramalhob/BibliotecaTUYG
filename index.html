@@ -13,12 +13,17 @@
         <h1 class="title">Biblioteca de livros - TUYG</h1>
     </header>
     <div class="search-container">
-        <input type="text" id="searchBar" onkeyup="filterBooks()" placeholder="Filtrar por título...">
+        <input type="text" id="searchBar" onkeyup="filterBooks()" placeholder="Busque pelo título ou pelo nome do autor...">
     </div>
     <main id="bookList"> </main>
     <script src="assets/xlsx.full.min.js"></script>
     <script src="index.js"></script>
 </body>
+
+<div id="noResultsMessage" style="display: none;">
+    <img src="data/images/emptyState.png" alt="Imagem de aviso" id="noResultsImage" />
+    <p>Nenhum livro encontrado.</p>
+</div>
 
 <!-- Modal -->
 <div id="bookModal" class="modal">

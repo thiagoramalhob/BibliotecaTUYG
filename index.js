@@ -53,7 +53,7 @@ function displayBooks(books) {
         bookDiv.className = "book";
 
         const img = document.createElement("img");
-        const nameBook = book["Nome do Livro"].replace(/[?!]/g, '')
+        const nameBook = book["Nome do Livro"].replace(/[?!]/g, '').replace(/^\s+|\s+$/g, '');
         img.src = `data/images/${nameBook}.jpg`;
         img.onerror = () => {
             img.src = `data/images/emptyState.png`;
@@ -71,6 +71,7 @@ function displayBooks(books) {
 
         const author = document.createElement("p");
         author.textContent = `Autor: ${book.Autor}`;
+        author.className = "author";
         bookDiv.appendChild(author);
 
         // const editora = document.createElement("p");
@@ -84,13 +85,23 @@ function displayBooks(books) {
 function filterBooks() {
     const searchTerm = document.getElementById("searchBar").value.toLowerCase();
     const books = document.querySelectorAll(".book");
+    let found = false;
 
     books.forEach(book => {
         const title = book.querySelector("h2").textContent.toLowerCase();
-        if (title.includes(searchTerm)) {
+        const author = book.querySelector(".author").textContent.toLowerCase();
+        if (title.includes(searchTerm) || author.includes(searchTerm)) {
             book.style.display = "";
+            found = true;
         } else {
             book.style.display = "none";
         }
     });
+
+    const noResultsMessage = document.getElementById("noResultsMessage");
+    if (!found) {
+        noResultsMessage.style.display = "block"; // Mostra a mensagem
+    } else {
+        noResultsMessage.style.display = "none"; // Esconde a mensagem
+    }
 }
