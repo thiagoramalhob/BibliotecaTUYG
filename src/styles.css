@@ -143,6 +143,32 @@ header .title {
     margin-top: 10px;
     box-sizing: border-box; /* Inclui padding e border na altura total */
 }
+
+.book .availability-tag {
+    background-color: #F8D7DA; /* Cor de fundo suave para destacar a indisponibilidade */
+    color: #721C24; /* Cor do texto da tag */
+    border: 1px solid #F5C6CB; /* Borda para destaque */
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 0.9em;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.book .availability-tag.available {
+    background-color: #D4EDDA; /* Cor de fundo verde claro para indicar disponibilidade */
+    color: #155724; /* Cor do texto da tag */
+    border: 1px solid #C3E6CB; /* Borda para indicar disponibilidade */
+}
+
+.book .availability-tag .date {
+    font-weight: bold;
+    display: block;
+    margin-top: 3px;
+}
+
 /* Estilo do Modal */
 .modal {
     display: none; /* Escondido por padrão */

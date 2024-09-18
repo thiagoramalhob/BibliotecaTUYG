@@ -82,6 +82,22 @@ function displayBooks(rows) {
         author.className = "author";
         bookDiv.appendChild(author);
 
+        // Verifica a disponibilidade e cria a tag apropriada
+        const availability = book[6] ? book[6].v : 'disponível'; // Verifica se `book[6]` existe
+        const availabilityTag = document.createElement("div");
+        
+        if (availability.toLowerCase() === 'indisponível') {
+            availabilityTag.className = "availability-tag";
+            availabilityTag.innerHTML = `
+                <span>Indisponível</span>
+                <span class="date">Previsão de disponibilidade: ${book[7] ? book[7].f : 'Não disponível'}</span>
+            `;
+        } else {
+            availabilityTag.className = "availability-tag available";
+            availabilityTag.textContent = "Disponível";
+        }
+
+        bookDiv.appendChild(availabilityTag);
         bookList.appendChild(bookDiv);
     });
 }
