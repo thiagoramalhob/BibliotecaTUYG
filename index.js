@@ -57,48 +57,50 @@ function displayBooks(rows) {
     rows.forEach(row => {
         const book = row.c || []; // Verifica se `row.c` existe
 
-        const bookDiv = document.createElement("div");
-        bookDiv.className = "book";
+        if (book[2].v != '') {
+            const bookDiv = document.createElement("div");
+            bookDiv.className = "book";
 
-        const img = document.createElement("img");
-        const nameBook = book[2] ? book[2].v.replace(/[?!]/g, '').replace(/^\s+|\s+$/g, '') : 'default'; // Verifica se `book[2]` existe
-        img.src = `data/images/${nameBook}.jpg`;
-        img.onerror = () => {
-            img.src = `data/images/emptyState.png`;
+            const img = document.createElement("img");
+            const nameBook = book[2] ? book[2].v.replace(/[?!]/g, '').replace(/^\s+|\s+$/g, '') : 'default'; // Verifica se `book[2]` existe
+            img.src = `data/images/${nameBook}.jpg`;
+            img.onerror = () => {
+                img.src = `data/images/emptyState.png`;
+            };
+            bookDiv.appendChild(img);
+
+            const title = document.createElement("h2");
+            title.textContent = book[2].v;
+            bookDiv.appendChild(title);
+
+            const description = document.createElement("p");
+            description.textContent = book[5] ? book[5].v : ''; // Verifica se `book[5]` existe
+            description.className = "summary";
+            bookDiv.appendChild(description);
+
+            const author = document.createElement("p");
+            author.textContent = book[3] ? `Autor: ${book[3].v}` : ''; // Verifica se `book[3]` existe
+            author.className = "author";
+            bookDiv.appendChild(author);
+
+            // Verifica a disponibilidade e cria a tag apropriada
+            const availability = book[6] ? book[6].v : 'disponível'; // Verifica se `book[6]` existe
+            const availabilityTag = document.createElement("div");
+            
+            if (availability.toLowerCase() === 'indisponível') {
+                availabilityTag.className = "availability-tag";
+                availabilityTag.innerHTML = `
+                    <span>Indisponível</span>
+                    <span class="date">Previsão de disponibilidade: ${book[7] ? book[7].f : 'Não disponível'}</span>
+                `;
+            } else {
+                availabilityTag.className = "availability-tag available";
+                availabilityTag.textContent = "Disponível";
+            }
+
+            bookDiv.appendChild(availabilityTag);
+            bookList.appendChild(bookDiv);
         };
-        bookDiv.appendChild(img);
-
-        const title = document.createElement("h2");
-        title.textContent = book[2] ? book[2].v : 'Título não disponível'; // Verifica se `book[2]` existe
-        bookDiv.appendChild(title);
-
-        const description = document.createElement("p");
-        description.textContent = book[5] ? book[5].v : 'Descrição não disponível'; // Verifica se `book[5]` existe
-        description.className = "summary";
-        bookDiv.appendChild(description);
-
-        const author = document.createElement("p");
-        author.textContent = book[3] ? `Autor: ${book[3].v}` : 'Autor não disponível'; // Verifica se `book[3]` existe
-        author.className = "author";
-        bookDiv.appendChild(author);
-
-        // Verifica a disponibilidade e cria a tag apropriada
-        const availability = book[6] ? book[6].v : 'disponível'; // Verifica se `book[6]` existe
-        const availabilityTag = document.createElement("div");
-        
-        if (availability.toLowerCase() === 'indisponível') {
-            availabilityTag.className = "availability-tag";
-            availabilityTag.innerHTML = `
-                <span>Indisponível</span>
-                <span class="date">Previsão de disponibilidade: ${book[7] ? book[7].f : 'Não disponível'}</span>
-            `;
-        } else {
-            availabilityTag.className = "availability-tag available";
-            availabilityTag.textContent = "Disponível";
-        }
-
-        bookDiv.appendChild(availabilityTag);
-        bookList.appendChild(bookDiv);
     });
 }
 
