@@ -14,14 +14,12 @@ Este é um projeto de uma biblioteca de livros do TUYG, onde é possível visual
 - HTML
 - CSS
 - JavaScript
-- [xlsx](https://www.npmjs.com/package/xlsx) (biblioteca para leitura de arquivos Excel)
 
 ## Estrutura do Projeto
 
 - `index.html`: Estrutura principal da página.
 - `src/styles.css`: Estilos para a página.
 - `index.js`: Lógica principal do projeto.
-- `data/inventarioDeLivros.xlsx`: Arquivo Excel com a lista de livros.
 - `data/images`: Diretório contendo as imagens dos livros e a imagem de estado vazio.
 
 ## Licença
